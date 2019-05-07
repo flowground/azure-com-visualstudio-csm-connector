@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The body of a PUT request to modify a Visual Studio account resource.",
+            "properties": {
+                "accountName": {
+                    "description": "The account name.",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "The Azure instance location.",
+                    "type": "string"
+                },
+                "operationType": {
+                    "description": "The type of the operation.",
+                    "enum": [
+                        "unknown",
+                        "create",
+                        "update",
+                        "link"
+                    ],
+                    "x-ms-enum": {
+                        "name": "AccountResourceRequestOperationType"
+                    }
+                },
+                "properties": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "The custom properties of the resource.",
+                    "type": "object",
+                    "x-ms-client-flatten": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "The custom tags of the resource.",
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

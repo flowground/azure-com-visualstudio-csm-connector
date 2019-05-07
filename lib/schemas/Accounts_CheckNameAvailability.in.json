@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The body of a POST request to check name availability.",
+            "properties": {
+                "resourceName": {
+                    "description": "The name of the resource to check availability for.",
+                    "type": "string"
+                },
+                "resourceType": {
+                    "description": "The type of resource to check availability for.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
